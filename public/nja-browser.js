@@ -1619,6 +1619,11 @@
                         gaikuItem = gaikuListItem.find(function (item) { return item.gaiku === gaiku_1; });
                         banchi_1 = jyukyo ? gaiku_1 + "-" + jyukyo : gaiku_1;
                         chiban = chibans.find(function (chib) { return chib.banchi === banchi_1; });
+                        // TODO: clean this up
+                        // 枝筆が無いときに番号を先に使ってみる
+                        if (!jyukyo && !chiban) {
+                            chiban = chibans.find(function (chib) { return chib.banchi.startsWith(gaiku_1 + "-"); });
+                        }
                         if (chiban) {
                             addr2 = addr.replace(banchi_1, '').trim();
                             return [2 /*return*/, {
