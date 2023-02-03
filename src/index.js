@@ -7,7 +7,16 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <div className="container mt-4">
+      <h1>住所正規化デモ</h1>
+    </div>
     <App />
+    <div 
+      className="container" 
+      style={{"marginTop": "80px", "borderTop": "3px solid #dedede", "padding": "8px"}}
+    >
+      <p style={{"textAlign": "center"}}>By <a href="https://github.com/geolonia/normalize-japanese-addresses">@geolonia/normalize-japanese-addresses</a></p>
+    </div>
   </React.StrictMode>
 );
 
